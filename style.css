@@ -1,0 +1,510 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+:root {
+    --bg-dark: #0d1020;
+    --pink: #ff5c7c;
+    --gold: #ffd166;
+    --text-light: #f7f7ff;
+    --glass: rgba(23, 28, 50, 0.85);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-dark);
+    background-image:
+        linear-gradient(rgba(255, 92, 124, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 92, 124, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+    color: var(--text-light);
+    font-family: 'VT323', monospace;
+    font-size: 22px;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at top right, rgba(255, 92, 124, 0.15), transparent 40%),
+        radial-gradient(circle at bottom left, rgba(255, 209, 102, 0.1), transparent 40%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* === HORNÍ NAVIGACE === */
+.top-nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 25px 35px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.top-nav a {
+    text-decoration: none;
+    color: var(--gold);
+    font-family: 'Press Start 2P', monospace;
+    font-size: 11px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.top-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--pink);
+    transition: 0.3s ease;
+}
+
+.top-nav a:hover {
+    color: var(--pink);
+    text-shadow: 0 0 10px var(--pink);
+}
+
+.top-nav a:hover::after {
+    width: 100%;
+}
+
+/* === HLAVNÍ OBSAH === */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: -50px;
+}
+
+/* PIXELOVÉ LOGO */
+.pixel-logo {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 90px;
+    margin-bottom: 70px;
+    letter-spacing: -4px;
+    text-align: center;
+    line-height: 1.2;
+    animation: float-logo 4s ease-in-out infinite;
+}
+
+@keyframes float-logo {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.pixel-logo span:nth-child(1) {
+    color: #4285f4;
+    text-shadow: 0 0 20px #4285f4;
+}
+
+.pixel-logo span:nth-child(2) {
+    color: #ea4335;
+    text-shadow: 0 0 20px #ea4335;
+}
+
+.pixel-logo span:nth-child(3) {
+    color: #fbbc05;
+    text-shadow: 0 0 20px #fbbc05;
+}
+
+.pixel-logo span:nth-child(4) {
+    color: #4285f4;
+    text-shadow: 0 0 20px #4285f4;
+}
+
+.pixel-logo span:nth-child(5) {
+    color: #34a853;
+    text-shadow: 0 0 20px #34a853;
+}
+
+.pixel-logo span:nth-child(6) {
+    color: #ea4335;
+    text-shadow: 0 0 20px #ea4335;
+}
+
+/* === VYHLEDÁVACÍ POLE === */
+.search-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    z-index: 2;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 650px;
+    height: 60px;
+    background: var(--glass);
+    border: 2px solid #303958;
+    border-radius: 8px;
+    padding: 0 20px;
+    margin-bottom: 35px;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.search-bar:hover,
+.search-bar:focus-within {
+    border-color: var(--pink);
+    box-shadow: 0 0 25px rgba(255, 92, 124, 0.4);
+    transform: translateY(-3px);
+}
+
+.search-icon {
+    fill: var(--gold);
+    width: 26px;
+    height: 26px;
+    margin-right: 15px;
+}
+
+.search-bar input[type="text"] {
+    flex: 1;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 28px;
+    font-family: 'VT323', monospace;
+    color: var(--text-light);
+    background: transparent;
+}
+
+.search-bar input[type="text"]::placeholder {
+    color: rgba(247, 247, 255, 0.3);
+}
+
+/* === TLAČÍTKA === */
+.search-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.search-buttons input[type="submit"] {
+    background-color: transparent;
+    border: 2px solid var(--gold);
+    border-radius: 6px;
+    color: var(--gold);
+    font-family: 'Press Start 2P', monospace;
+    font-size: 11px;
+    padding: 0 25px;
+    height: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-buttons input[type="submit"]:hover {
+    background-color: var(--gold);
+    color: var(--bg-dark);
+    box-shadow: 0 0 25px var(--gold);
+    transform: translateY(-3px);
+}
+
+/* === OBRÁZKY === */
+.image-search-main {
+    margin-top: -20px;
+}
+
+.image-logo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.image-logo .pixel-logo {
+    margin-bottom: 0;
+    font-size: 50px;
+    animation: none;
+}
+
+.images-text {
+    color: var(--gold);
+    font-family: 'Press Start 2P', monospace;
+    font-size: 24px;
+    text-shadow: 0 0 15px var(--gold);
+}
+
+/* === POKROČILÉ === */
+.advanced-content,
+.form-content {
+    width: 100%;
+    max-width: 1050px;
+    margin: 20px auto;
+    padding: 0 40px;
+    z-index: 2;
+}
+
+.advanced-content h1,
+.form-content h1 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 18px;
+    color: var(--pink);
+    margin-bottom: 30px;
+    text-shadow: 0 0 15px rgba(255, 92, 124, 0.6);
+}
+
+.advanced-content hr,
+.form-content hr {
+    border: 0;
+    border-top: 2px dashed #303958;
+    margin-bottom: 45px;
+}
+
+.advanced-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.advanced-row label {
+    width: 280px;
+    font-size: 22px;
+    color: var(--text-light);
+}
+
+.advanced-row input[type="text"] {
+    width: 450px;
+    height: 45px;
+    padding: 0 15px;
+    background: var(--glass);
+    border: 2px solid #303958;
+    border-radius: 6px;
+    color: var(--gold);
+    font-size: 22px;
+    outline: none;
+}
+
+.advanced-row input[type="text"]:focus {
+    border-color: var(--pink);
+    box-shadow: 0 0 15px rgba(255, 92, 124, 0.3);
+}
+
+.hint {
+    margin-left: 20px;
+    font-size: 18px;
+    color: #adb5d0;
+}
+
+.hint b {
+    color: var(--pink);
+}
+
+.advanced-submit {
+    display: flex;
+    margin-left: 280px;
+    margin-top: 40px;
+}
+
+.advanced-submit input[type="submit"] {
+    background-color: transparent;
+    border: 2px solid var(--pink);
+    color: var(--pink);
+    border-radius: 6px;
+    padding: 0 25px;
+    height: 50px;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.advanced-submit input[type="submit"]:hover {
+    background-color: var(--pink);
+    color: var(--bg-dark);
+    box-shadow: 0 0 25px var(--pink);
+}
+
+/* === FORMULÁŘOVÁ STRÁNKA === */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    color: var(--gold);
+    font-family: 'Press Start 2P', monospace;
+    font-size: 10px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group select,
+.form-group textarea {
+    background: var(--glass);
+    border: 2px solid #303958;
+    border-radius: 6px;
+    color: var(--text-light);
+    padding: 12px;
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--pink);
+    box-shadow: 0 0 15px rgba(255, 92, 124, 0.3);
+}
+
+.form-group input[type="color"] {
+    width: 100%;
+    height: 50px;
+    border: 2px solid #303958;
+    background: transparent;
+    cursor: pointer;
+}
+
+.form-group input[type="range"] {
+    width: 100%;
+    cursor: pointer;
+}
+
+.check-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.check-group label {
+    color: var(--text-light);
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.check-group input {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    accent-color: var(--pink);
+}
+
+fieldset {
+    border: 2px dashed #303958;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+legend {
+    color: var(--pink);
+    font-family: 'Press Start 2P', monospace;
+    font-size: 12px;
+    padding: 0 10px;
+}
+
+.btn-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.form-btn {
+    background: transparent;
+    border: 2px solid var(--gold);
+    color: var(--gold);
+    padding: 15px 30px;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.form-btn:hover {
+    background: var(--gold);
+    color: var(--bg-dark);
+}
+
+.form-btn.reset {
+    border-color: var(--pink);
+    color: var(--pink);
+}
+
+.form-btn.reset:hover {
+    background: var(--pink);
+    color: var(--bg-dark);
+}
+
+/* === SPODNÍ PATIČKA === */
+.retro-footer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    margin-top: auto;
+    background: rgba(13, 16, 32, 0.9);
+    border-top: 2px solid #303958;
+}
+
+.retro-footer a {
+    color: var(--gold);
+    text-decoration: none;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 9px;
+    transition: 0.3s;
+}
+
+.retro-footer a:hover {
+    color: var(--pink);
+    text-shadow: 0 0 10px var(--pink);
+}
+
+@media (max-width: 768px) {
+    .pixel-logo {
+        font-size: 45px;
+        letter-spacing: -2px;
+        margin-bottom: 40px;
+    }
+
+    .image-logo .pixel-logo {
+        font-size: 30px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}

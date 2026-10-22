@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google // Formuláře</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="top-nav">
+        <div class="nav-right">
+            <a href="index.html">HLEDAT</a>
+            <a href="images.html">OBRÁZKY</a>
+            <a href="advanced.html">POKROČILÉ</a>
+        </div>
+    </header>
+
+    <main class="form-content">
+        <h1>FORMULÁŘOVÉ PRVKY</h1>
+        <hr>
+
+        <form action="#" method="POST">
+            <fieldset>
+                <legend>TEXT A ČÍSLA</legend>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="username">Uživatelské jméno (text):</label>
+                        <input type="text" id="username" placeholder="Zadej jméno...">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" placeholder="tvuj@email.cz">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Heslo:</label>
+                        <input type="password" id="password" placeholder="********">
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Věk (number):</label>
+                        <input type="number" id="age" min="1" max="100" placeholder="18">
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Datum narození:</label>
+                        <input type="date" id="date">
+                    </div>
+                    <div class="form-group">
+                        <label for="color">Oblíbená barva:</label>
+                        <input type="color" id="color" value="#ff5c7c">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>VÝBĚR A ROZSAH</legend>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="volume">Hlasitost (range 0-100):</label>
+                        <input type="range" id="volume" min="0" max="100" value="50">
+                    </div>
+                    <div class="form-group">
+                        <label for="game">Oblíbená hra (select):</label>
+                        <select id="game">
+                            <option value="minecraft">Minecraft</option>
+                            <option value="rl">Rocket League</option>
+                            <option value="cs">Counter-Strike</option>
+                            <option value="other">Jiná...</option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>ZPRÁVA A ZAŠKRTÁVÁNÍ</legend>
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label for="message">Tvoje zpráva (textarea):</label>
+                    <textarea id="message" rows="4" placeholder="Sem napiš něco dlouhého..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Zájmy (checkbox):</label>
+                    <div class="check-group">
+                        <label><input type="checkbox" name="zajmy" value="gaming"> Gaming</label>
+                        <label><input type="checkbox" name="zajmy" value="coding"> Programování</label>
+                        <label><input type="checkbox" name="zajmy" value="sport"> Sport</label>
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-top: 15px;">
+                    <label>Pohlaví (radio):</label>
+                    <div class="check-group">
+                        <label><input type="radio" name="pohlavi" value="m"> Muž</label>
+                        <label><input type="radio" name="pohlavi" value="z"> Žena</label>
+                        <label><input type="radio" name="pohlavi" value="j"> Jiné</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="btn-group">
+                <button type="submit" class="form-btn">ODESLAT</button>
+                <button type="reset" class="form-btn reset">RESETOVAT</button>
+                <button type="button" class="form-btn" style="border-color: #4285f4; color: #4285f4;">OBYČEJNÉ
+                    TLAČÍTKO</button>
+            </div>
+        </form>
+    </main>
+
+    <footer class="retro-footer">
+        <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fdaniel-gorcica.github.io%2Fgooglesearch%2Fforms.html"
+            target="_blank">HTML VALID</a>
+        <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fdaniel-gorcica.github.io%2Fgooglesearch%2Fforms.html&profile=css3svg"
+            target="_blank">CSS VALID</a>
+        <a href="https://github.com/daniel-gorcica/googlesearch/blob/main/citace.md" target="_blank">CITACE</a>
+        <a href="https://daniel-gorcica.github.io/" target="_blank">PORTFOLIO</a>
+    </footer>
+</body>
+
+</html>

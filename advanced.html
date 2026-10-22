@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google // Pokročilé</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="top-nav">
+        <div class="nav-right">
+            <a href="forms.html">FORMULÁŘE</a>
+            <a href="index.html">HLEDAT</a>
+            <a href="images.html">OBRÁZKY</a>
+        </div>
+    </header>
+
+    <main class="advanced-content">
+        <h1>POKROČILÉ VYHLEDÁVÁNÍ</h1>
+        <hr>
+
+        <form action="https://www.google.com/search" method="GET">
+            <div class="advanced-row">
+                <label for="as_q">Tato slova:</label>
+                <input type="text" name="as_q" id="as_q" placeholder="např. rychlé auto">
+                <span class="hint">Napište slova, která musí stránka obsahovat.</span>
+            </div>
+            <div class="advanced-row">
+                <label for="as_epq">Přesná fráze:</label>
+                <input type="text" name="as_epq" id="as_epq" placeholder='např. "rychlé auto"'>
+                <span class="hint">Napište přesnou frázi v uvozovkách.</span>
+            </div>
+            <div class="advanced-row">
+                <label for="as_oq">Kterákoli z těchto slov:</label>
+                <input type="text" name="as_oq" id="as_oq" placeholder="např. auto OR motorka">
+                <span class="hint">Napište slova oddělená <b>OR</b> (nebo).</span>
+            </div>
+            <div class="advanced-row">
+                <label for="as_nq">Žádné z těchto slov:</label>
+                <input type="text" name="as_nq" id="as_nq" placeholder="např. -červená -modrá">
+                <span class="hint">Napište slova s <b>minusem</b> (vyloučit).</span>
+            </div>
+            <div class="advanced-submit">
+                <input type="submit" value="POKROČILÉ VYHLEDÁVÁNÍ">
+            </div>
+        </form>
+    </main>
+
+    <footer class="retro-footer">
+        <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fdaniel-gorcica.github.io%2Fgooglesearch%2Fadvanced.html" target="_blank">HTML VALID</a>
+        <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fdaniel-gorcica.github.io%2Fgooglesearch%2Fadvanced.html&profile=css3svg" target="_blank">CSS VALID</a>
+        <a href="https://github.com/daniel-gorcica/googlesearch/blob/main/citace.md" target="_blank">CITACE</a>
+        <a href="https://daniel-gorcica.github.io/" target="_blank">PORTFOLIO</a>
+    </footer>
+</body>
+</html>
