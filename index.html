@@ -30,12 +30,12 @@
                         d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
                     </path>
                 </svg>
-                <input type="text" name="q" required autocomplete="off" autofocus placeholder="Zadej hledaný výraz...">
+                <input type="text" name="q" id="search-query" required autocomplete="off" autofocus placeholder="Zadej hledaný výraz...">
             </div>
 
             <div class="search-buttons">
                 <input type="submit" value="Hledat">
-                <input type="submit" name="btnI" value="Mám štěstí">
+                <input type="submit" id="lucky-button" value="Mám štěstí" formaction="https://www.google.com/search" name="btnI">
             </div>
         </form>
     </main>
@@ -48,6 +48,27 @@
         <a href="https://github.com/daniel-gorcica/googlesearch/blob/main/citace.md" target="_blank">CITACE</a>
         <a href="https://daniel-gorcica.github.io/" target="_blank">PORTFOLIO</a>
     </footer>
+    <script>
+        const searchQuery = document.getElementById("search-query");
+        const luckyButton = document.getElementById("lucky-button");
+        const randomLinks = [
+            "https://cs.wikipedia.org/wiki/Speci%C3%A1ln%C3%AD:N%C3%A1hodn%C3%A1_str%C3%A1nka",
+            "https://www.nasa.gov/",
+            "https://www.nationalgeographic.com/",
+            "https://www.ted.com/",
+            "https://www.openstreetmap.org/",
+            "https://www.imdb.com/",
+            "https://www.gutenberg.org/"
+        ];
+
+        luckyButton.addEventListener("click", (event) => {
+            if (!searchQuery.value.trim()) {
+                event.preventDefault();
+                const randomIndex = Math.floor(Math.random() * randomLinks.length);
+                window.location.href = randomLinks[randomIndex];
+            }
+        });
+    </script>
 </body>
 
 </html>
